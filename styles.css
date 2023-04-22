@@ -5,10 +5,6 @@ body {
     color:white;
 }
 
-.sakriyovo {
-    display:none;
-}
-
 .emotepicker-tabbar {
     display:inline-block;
 }
@@ -24,7 +20,7 @@ body {
 }
 
 .emotepicker-tab {
-    width:200px;
+    width:150px;
     height:100px;
     display:flex;
     flex-direction:column;
@@ -35,6 +31,10 @@ body {
     margin:8px;
     float:left;
     cursor:pointer;
+}
+
+.emotepicker-tab span {
+    font-size:11px;
 }
 
 .emotepicker-tab-selected {
@@ -61,6 +61,32 @@ body {
 .emotepicker-content-cont img {
     float:left;
     cursor:pointer;
-    border-radius:10px;
+}
+
+.emotepicker-content-cont-unit {
+    width:90px;
+    height:90px;
+    float:left;
     margin:8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.emotepicker-content-cont-unit img {
+    border-radius: 7px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.sakriyovo {
+    display:none;
+}
+
+.lockthis {
+    display:none;
+}
+
+.blacklistthis {
+    display:none;
 }

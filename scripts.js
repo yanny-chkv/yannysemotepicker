@@ -1,3 +1,6 @@
+lockthese=["jpnmng_yaoibl","stan_twitter","wcomic_lpvid_ftphd","winx","jpnmng_yaoi"]
+blacklist=["betm","lpvid","peaches","nshn","natsumi","wojak"]
+
 function getemotesrclink(idofemoteimg)
 {
     myimg=document.getElementById(idofemoteimg);
@@ -14,16 +17,64 @@ function getemotesrclink(idofemoteimg)
 function populate_tabs()
 {
       addixt=""
+      addixt+='<div onclick="populate_emojicontall()" id="tabbarshowallemotes" class="emotepicker-tab"><span>Show all</span></div>';
       emotedirs.forEach(item => {
-            addixt+='<div onclick="populate_emojicont(\''+item.id+'\')" id="tabbar'+item.id+'" class="emotepicker-tab">';
+            item.dirs.forEach(itemr=>{
+                  if(itemr.includes("000"))
+                  {
+                        fitm=itemr;
+                  }
+            })
+            tobelckd="";
+            if(lockthese.includes(item.id))
+            {
+                  tobelckd=" lockthis"
+            }
+            addixt+='\n<div onclick="populate_emojicont(\''+item.id+'\')" id="tabbar'+item.id+'" class="emotepicker-tab'+tobelckd+'">';
             addixt+='\n<div class="emotepicker-tab-iconcont">';
-            addixt+='\n<img src="emotes/'+item.id+'/000.png">'
+            addixt+='\n<img src="emotes/'+item.id+'/'+fitm+'">'
             addixt+='\n</div>'
             addixt+='<span>'+item.id+'</span>'
             addixt+='\n</div>\n';
       })
-      console.log(addixt)
       document.getElementsByClassName('emotepicker-tabbar')[0].innerHTML=addixt;
+}
+
+function populate_emojicontall()
+{
+      addix="";
+      addix+='<div class="emotepicker-content-cont">';
+      addix+='\n<input type="text" class="emotepicker-textbox" oninput="searchemojis()" id="emotepicker-cont-filter" placeholder="Emote filter"><br>';
+      emotedirs.forEach(item => {
+            item.dirs.forEach(itemx => {
+                  blcklstflg=0;
+                  blacklist.forEach(itemo => {
+                        if(itemx.includes(itemo))
+                        {
+                              blcklstflg=1;
+                        }
+                  })
+                  if(itemx.includes("000") || (lockthese.includes(item.id)&&key3==0) || (blcklstflg==1 && key6==0))
+                  {
+
+                  }
+                  else
+                  {
+
+                        addix+='<div class="emotepicker-content-cont-unit" id="emote/'+item.id+'/'+itemx+'">'
+                        addix+='\n<img onclick="getemotesrclink(this.id)" id="emote/'+item.id+'/'+itemx+'-imgf" src="emotes/'+item.id+'/'+itemx+'" title="'+itemx+'">';
+                        addix+='</div>'
+                  }
+            })
+      })
+      addix+='\n</div>';
+      document.getElementsByClassName('emotepicker-content-cont')[0].outerHTML=addix;
+
+      Array.from(document.getElementsByClassName('emotepicker-tab emotepicker-tab-selected')).forEach(item=>{
+            item.classList.remove("emotepicker-tab-selected");
+      })
+
+      document.getElementById("tabbarshowallemotes").classList.add("emotepicker-tab-selected");
 }
 
 function populate_emojicont(selid)
@@ -38,12 +89,26 @@ function populate_emojicont(selid)
             }
       })
       emdir.dirs.forEach(item => {
-            console.log(item);
-            addix+='\n<img onclick="getemotesrclink(this.id)" id="emote/'+emdir.id+'/'+item+'" src="emotes/'+emdir.id+'/'+item+'.png" class="emotepicker-content-cont-unit">';
+            blcklstflg=0;
+            blacklist.forEach(itemo => {
+                  if(item.includes(itemo))
+                  {
+                        blcklstflg=1;
+                  }
+            })
+            if(item.includes("000") || (blcklstflg==1 && key6==0))
+            {
+
+            }
+            else
+            {
+                  addix+='<div class="emotepicker-content-cont-unit" id="emote/'+emdir.id+'/'+item+'">'
+                  addix+='\n<img onclick="getemotesrclink(this.id)" id="emote/'+emdir.id+'/'+item+'-imgf" src="emotes/'+emdir.id+'/'+item+'" title="'+item+'">';
+                  addix+='</div>'
+            }
       })
       addix+='\n</div>';
       document.getElementsByClassName('emotepicker-content-cont')[0].outerHTML=addix;
-      console.log(document.getElementById("tabbar"+selid));
 
       Array.from(document.getElementsByClassName('emotepicker-tab emotepicker-tab-selected')).forEach(item=>{
             item.classList.remove("emotepicker-tab-selected");
@@ -54,11 +119,21 @@ function populate_emojicont(selid)
 
 function searchemojis()
 {
-      sqry=document.getElementById("emotepicker-cont-filter").value;
-      console.log(sqry);
+      sqry=document.getElementById("emotepicker-cont-filter").value.toLowerCase();
       Array.from(document.getElementsByClassName('emotepicker-content-cont-unit')).forEach(item => {
             tmpen=item.id.split("/").slice(-1)[0];
-            if(tmpen.includes(sqry))
+            incld=2;
+            sqry.split(" ").forEach(itemcx => {
+                  if(tmpen.includes(itemcx) && incld!=0)
+                  {
+                        incld=1;
+                  }
+                  else
+                  {
+                        incld=0;
+                  }
+            })
+            if(incld==1)
             {
                   item.classList.remove("sakriyovo");
             }
@@ -66,7 +141,79 @@ function searchemojis()
             {
                   item.classList.add("sakriyovo");
             }
-            item.classList.remove('sakriythis');
+      })
+}
+
+function searchtabs()
+{
+      sqry=document.getElementById("emotepicker-tabbar-filter").value;
+      Array.from(document.getElementsByClassName('emotepicker-tab')).forEach(itemx => {
+            tmpen=itemx.id;
+            if(tmpen.includes(sqry))
+            {
+                  itemx.classList.remove("sakriyovo");
+            }
+            else
+            {
+                  itemx.classList.add("sakriyovo");
+            }
+      })
+}
+
+key1=0;
+key2=0;
+key3=0;
+key4=0;
+key5=0;
+key51=0;
+key6=0;
+
+function switch1()
+{
+      key1=1;
+      if(key3==1)
+      {
+            key4=1;
+            key3=2;
+      }
+      else if(key4==1)
+      {
+            key4=0;
+            key5=1;
+      }
+      else if(key5==1)
+      {
+            key5=0;
+            key51=1;
+      }
+}
+
+function switch2()
+{
+      if(key1==1)
+      {
+            key2=1;
+      }
+      if(key51==1)
+      {
+            key51==0;
+            key6=1;
+      }
+}
+
+function switch3()
+{
+      if(key1==1 && key2==1)
+      {
+            key3=1;
+            unlocktabs();
+      }
+}
+
+function unlocktabs()
+{
+      Array.from(document.getElementsByClassName("lockthis")).forEach(itemx => {
+            itemx.classList.remove("lockthis");
       })
 }
 
