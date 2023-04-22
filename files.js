@@ -451,6 +451,8 @@ dirs:[
       "000.webp",
       "eyelipseye.webp",
       "twitter_clownlaughopeneyes.webp",
+      "twitter_eggplant_jerk.gif",
+      "twitter_facialcvm.webp",
 ],
 },
 {
@@ -504,6 +506,7 @@ dirs:[
       "jiafei_fire.webp",
       "jiafei_pinkhair.webp",
       "jiafei_raisedfakeyebrow.webp",
+      "lays_gays_parody.webp",
       "nickiminajstare.webp",
       "peachescreepy.webp",
       "peachesdancing.gif",
