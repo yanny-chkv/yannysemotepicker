@@ -351,7 +351,6 @@ dirs:[
       "c_sticker_shj_lpvid_ftphd_briardame.webp",
       "c_sticker_shj_lpvid_ftphd_briarsleep.webp",
       "c_sticker_shj_lpvid_ftphd_briarwut.webp",
-      "tmp",
 ],
 },
 {
