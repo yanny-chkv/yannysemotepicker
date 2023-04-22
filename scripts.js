@@ -1,5 +1,5 @@
 lockthese=["jpnmng_yaoibl","stan_twitter","wcomic_lpvid_ftphd","winx","jpnmng_yaoi","yaoibarairl"]
-blacklist=["betm","lpvid","peaches","nshn","natsumi","wojak","gprnirl"]
+blacklist=["betm","lpvid","peaches","nshn","wojak","gprnirl"]
 
 function getemotesrclink(idofemoteimg)
 {
