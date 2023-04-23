@@ -1,4 +1,5 @@
-lockthese=["jpnmng_yaoibl","stan_twitter","wcomic_lpvid_ftphd","winx","jpnmng_yaoi","yaoibarairl"]
+lockthese=["jpnmng_yaoibl","yaoibarairl"]
+locktheseemotes=["nsfw","ahegao","yaoibl","stantwitter","winx"]
 blacklist=["betm","lpvid","peaches","nshn","wojak","gprnirl"]
 
 function getemotesrclink(idofemoteimg)
@@ -47,6 +48,13 @@ function populate_emojicontall()
       addix+='\n<input type="text" class="emotepicker-textbox" oninput="searchemojis()" id="emotepicker-cont-filter" placeholder="Emote filter"><br>';
       emotedirs.forEach(item => {
             item.dirs.forEach(itemx => {
+                  lockthsflg=0;
+                  locktheseemotes.forEach(itemo => {
+                        if(itemx.includes(itemo))
+                        {
+                              lockthsflg=1;
+                        }
+                  })
                   blcklstflg=0;
                   blacklist.forEach(itemo => {
                         if(itemx.includes(itemo))
@@ -54,7 +62,7 @@ function populate_emojicontall()
                               blcklstflg=1;
                         }
                   })
-                  if(itemx.includes("000") || (lockthese.includes(item.id)&&key3==0) || (blcklstflg==1 && key6==0))
+                  if(itemx.includes("000") || (lockthese.includes(item.id)&&key3==0) || (blcklstflg==1 && key6==0) || (lockthsflg==1 && key3==0))
                   {
 
                   }
@@ -89,6 +97,13 @@ function populate_emojicont(selid)
             }
       })
       emdir.dirs.forEach(item => {
+            lockthsflg=0;
+            locktheseemotes.forEach(itemo => {
+                  if(item.includes(itemo))
+                  {
+                        lockthsflg=1;
+                  }
+            })
             blcklstflg=0;
             blacklist.forEach(itemo => {
                   if(item.includes(itemo))
@@ -96,7 +111,7 @@ function populate_emojicont(selid)
                         blcklstflg=1;
                   }
             })
-            if(item.includes("000") || (blcklstflg==1 && key6==0))
+            if(item.includes("000") || (blcklstflg==1 && key6==0) || (lockthsflg==1 && key3==0))
             {
 
             }
