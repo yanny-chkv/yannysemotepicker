@@ -138,8 +138,13 @@ function searchemojis()
       Array.from(document.getElementsByClassName('emotepicker-content-cont-unit')).forEach(item => {
             tmpen=item.id.split("/").slice(-1)[0].toLowerCase();
             incld=2;
-            sqry.split(" ").forEach(itemcx => {
-                  if(tmpen.includes(itemcx) && incld!=0)
+            sqryarr=sqry.split(" ");
+            sqryarr.forEach(itemcx => {
+                  if((itemcx[0]=="-") && !tmpen.includes(itemcx.substring(1)) && (incld==1 || sqryarr.length==1))
+                  {
+                        incld=1;
+                  }
+                  else if(tmpen.includes(itemcx) && incld!=0 && itemcx[0]!='-')
                   {
                         incld=1;
                   }
