@@ -218,6 +218,7 @@ function switch2()
       {
             key51==0;
             key6=1;
+            document.getElementsByClassName("emotepicker-tab-selected")[0].click();
       }
 }
 
@@ -227,6 +228,7 @@ function switch3()
       {
             key3=1;
             unlocktabs();
+            document.getElementsByClassName("emotepicker-tab-selected")[0].click();
       }
 }
 
