@@ -136,7 +136,7 @@ function searchemojis()
 {
       sqry=document.getElementById("emotepicker-cont-filter").value.toLowerCase();
       Array.from(document.getElementsByClassName('emotepicker-content-cont-unit')).forEach(item => {
-            tmpen=item.id.split("/").slice(-1)[0];
+            tmpen=item.id.split("/").slice(-1)[0].toLowerCase();
             incld=2;
             sqry.split(" ").forEach(itemcx => {
                   if(tmpen.includes(itemcx) && incld!=0)
