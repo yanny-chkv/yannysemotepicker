@@ -2,6 +2,12 @@ lockthese=["jpnmng_yaoibl","yaoibarairl"]
 locktheseemotes=["nsfw","ahegao","yaoibl","stantwitter","winx"]
 blacklist=["betm","lpvid","peaches","nshn","wojak","gprnirl"]
 
+function playsnd(soundfile)
+{
+      var audio = new Audio(soundfile);
+      audio.play();
+}
+
 function getemotesrclink(idofemoteimg)
 {
     myimg=document.getElementById(idofemoteimg);
@@ -218,7 +224,15 @@ function switch2()
       {
             key51==0;
             key6=1;
-            document.getElementsByClassName("emotepicker-tab-selected")[0].click();
+            try
+            {
+                  document.getElementsByClassName("emotepicker-tab-selected")[0].click();
+            }
+            catch
+            {
+
+            }
+            playsnd("snd/unlock2.mp3");
       }
 }
 
@@ -228,7 +242,15 @@ function switch3()
       {
             key3=1;
             unlocktabs();
-            document.getElementsByClassName("emotepicker-tab-selected")[0].click();
+            try
+            {
+                  document.getElementsByClassName("emotepicker-tab-selected")[0].click();
+            }
+            catch
+            {
+
+            }
+            playsnd("snd/unlock1.mp3");
       }
 }
 
