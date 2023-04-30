@@ -275,6 +275,7 @@ dirs:[
       "c_rkgk_touhou_zunusama_koishi_smile_nikoniko.webp",
       "c_rkgk_touhou_zunusama_koishi_waaa.webp",
       "c_rkgk_touhou_zunusama_koishi_wave_hi.webp",
+      "c_rkgk_touhou_zunusama_koishi_yawn.webp",
       "c_yaoibl_bara_AngryGrrr.webp",
       "c_yaoibl_bara_ArsalanWave.webp",
       "c_yaoibl_bara_BIGSNIFF.webp",
