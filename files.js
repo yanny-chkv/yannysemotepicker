@@ -978,6 +978,7 @@ dirs:[
       "stantwitter_britneyspears_tilltheworldends_wantit.gif",
       "stantwitter_confusedmathlady.webp",
       "stantwitter_cupcakke_eating_cupcakes.gif",
+      "stantwitter_fortnitequeen_yaaaassletsgoooo.gif",
       "stantwitter_gabbiehanna_actingdifferent.gif",
       "stantwitter_gabbiehanna_caughtin4k.gif",
       "stantwitter_gabbiehanna_monstergenius.webp",
