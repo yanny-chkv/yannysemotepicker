@@ -884,6 +884,7 @@ dirs:[
       "animals_cats_dcat_sic_giggle.webp",
       "animals_cats_dcat_sic_hiss.gif",
       "animals_cats_dcat_sic_hiss1.webp",
+      "animals_cats_dcat_sic_hiss2.webp",
       "animals_cats_dcat_smil.webp",
       "animals_cats_dcat_white_chonk.webp",
       "animals_cats_dcat_white_chonk_sad.webp",
