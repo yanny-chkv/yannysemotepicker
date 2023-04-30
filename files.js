@@ -496,6 +496,7 @@ dirs:[
       "c_yaoibl_bara_greentea_shirtbite.webp",
       "c_yaoibl_bara_hereuare_thinking.webp",
       "c_yaoibl_bara_housamo_alca_opensdoor.webp",
+      "c_yaoibl_bara_housamo_gunzo_drinkingwater_stayhydrated.webp",
       "c_yaoibl_bara_housamo_shennong_lolsimp.webp",
       "c_yaoibl_bara_housamo_wakantanka_sippingjuice.webp",
       "c_yaoibl_bara_housamo_yatta.gif",
