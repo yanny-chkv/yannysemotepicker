@@ -580,6 +580,7 @@ dirs:[
       "c_yaoibl_barabishn_maorenc_kurt_shirtlift.webp",
       "c_yaoibl_barafurry_YouFurry.webp",
       "c_yaoibl_baranshn_bmp_campbuddy_aidenhunter_patchedscar.webp",
+      "c_yaoibl_bibibimix_given_mafuyuuenoyama_hug.webp",
       "c_yaoibl_bishn_betm_jujutsukaisen_gojo_takingapic.webp",
       "c_yaoibl_bishn_bmp_bacchikoi_masaru_sprite_anxious.webp",
       "c_yaoibl_bishn_bmp_bacchikoi_masaru_sprite_anxious2.webp",
