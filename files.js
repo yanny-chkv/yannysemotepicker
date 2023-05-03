@@ -1011,6 +1011,8 @@ dirs:[
       "stantwitter_kpop_bts_disgusted.webp",
       "stantwitter_lays_gays_parody.webp",
       "stantwitter_mouthcover.webp",
+      "stantwitter_nickiminaj_ireallylikesuperbass_iphoneringtone.mp4",
+      "stantwitter_nickiminaj_ireallylikesuperbass_iphoneringtone.webp",
       "stantwitter_nickiminaj_lemmetimetravelto10secondsago_tardis.webp",
       "stantwitter_nickiminaj_policejail.webp",
       "stantwitter_nickiminajstare.webp",
